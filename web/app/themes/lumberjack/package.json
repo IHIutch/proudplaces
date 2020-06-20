@@ -1,0 +1,48 @@
+{
+    "name": "lumberjack_webpack_starter",
+    "version": "1.0.0",
+    "description": "Wordpress Lumberjack Boilerplate with Webpack, Browsersync, and some SCSS related stuff",
+    "main": "index.js",
+    "scripts": {
+        "serve": "webpack --mode development --watch --display errors-only",
+        "build": "NODE_ENV=production webpack --mode production"
+    },
+    "repository": {
+        "url": "https://github.com/IHIutch/lumberjack_webpack_package_json_starter"
+    },
+    "license": "ISC",
+    "dependencies": {
+        "@babel/polyfill": "^7.4.4",
+        "core-js": "^3.0.1"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.4.3",
+        "@babel/core": "^7.9.6",
+        "@babel/preset-env": "^7.9.6",
+        "@babel/register": "^7.9.0",
+        "autoprefixer": "^9.7.6",
+        "babel-loader": "^8.1.0",
+        "browser-sync": "^2.26.5",
+        "browser-sync-webpack-plugin": "^2.2.2",
+        "css-loader": "^2.1.1",
+        "file-loader": "^3.0.1",
+        "mini-css-extract-plugin": "^0.6.0",
+        "node-sass": "^4.14.0",
+        "optimize-css-assets-webpack-plugin": "^5.0.1",
+        "postcss-import": "^12.0.1",
+        "postcss-loader": "^3.0.0",
+        "sass-loader": "^8.0.2",
+        "terser-webpack-plugin": "^1.2.3",
+        "webpack": "^4.43.0",
+        "webpack-cli": "^3.3.11"
+    },
+    "postcss": {
+        "plugins": {
+            "autoprefixer": {}
+        }
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions"
+    ]
+}
