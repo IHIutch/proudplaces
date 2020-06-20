@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Lumberjack;
+use App\Functions\EnqueueAssets;
 
 // Create the Application Container
 $app = require_once('bootstrap/app.php');
@@ -8,6 +9,9 @@ $app = require_once('bootstrap/app.php');
 // Bootstrap Lumberjack from the Container
 $lumberjack = $app->make(Lumberjack::class);
 $lumberjack->bootstrap();
+
+// Custom Functions
+EnqueueAssets::enqueueAssets();
 
 // Import our routes file
 require_once('routes.php');
