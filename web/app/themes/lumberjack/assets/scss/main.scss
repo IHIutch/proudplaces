@@ -1,1 +1,6 @@
-@import "~bootstrap/scss/bootstrap";
+@import "theme/variables";
+@import "theme/functions";
+
+@import "lib/bootstrap";
+
+@import "theme/custom";

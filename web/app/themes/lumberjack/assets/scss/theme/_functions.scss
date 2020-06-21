@@ -1,0 +1,34 @@
+@each $size, $value in $font-sizes {
+    .text-#{$size} {
+        font-size: $value !important;
+    }
+}
+
+@each $space, $value in $spacers {
+    .top-#{$space} {
+        top: $value !important;
+    }
+    .bottom-#{$space} {
+        bottom: $value !important;
+    }
+    .left-#{$space} {
+        left: $value !important;
+    }
+    .right-#{$space} {
+        right: $value !important;
+    }
+    @if $value != "auto" and $value != 0 {
+        .top-n#{$space} {
+            top: -$value !important;
+        }
+        .bottom-n#{$space} {
+            bottom: -$value !important;
+        }
+        .left-n#{$space} {
+            left: -$value !important;
+        }
+        .right-n#{$space} {
+            right: -$value !important;
+        }
+    }
+}
