@@ -17,11 +17,13 @@ class SingleController extends Controller
     {
         $context = Timber::get_context();
         $post = new Post();
+        $word_count = str_word_count(strip_tags($post->content));
+        $read_time =  ceil($word_count / 200);
 
         $context['post'] = $post;
-        $context['title'] = $post->title;
-        $context['content'] = $post->content;
+        $context['read_time'] = $read_time . " Minute" . ($read_time > 1 ? "s" : "");
 
-        return new TimberResponse('templates/generic-page.twig', $context);
+
+        return new TimberResponse('templates/post.twig', $context);
     }
 }

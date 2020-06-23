@@ -28,7 +28,7 @@ $spacers: (
     48: $rem * 12,
 );
 
-// FONT SIZING
+// TYPE
 $font-sizes: (
     2xs: $rem * 0.625,
     xs: $rem * 0.75,
@@ -42,3 +42,18 @@ $font-sizes: (
     5xl: $rem * 3,
     6xl: $rem * 4,
 );
+
+$leading: (
+    none: 1,
+    tight: 1.25,
+    snug: 1.375,
+    normal: 1.5,
+    relaxed: 1.625,
+    loose: 2,
+);
+
+// ========================================================
+// MISC
+// ========================================================
+
+$object-fit: (cover, contain);

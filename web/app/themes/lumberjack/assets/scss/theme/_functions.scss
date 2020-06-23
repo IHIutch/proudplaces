@@ -32,3 +32,15 @@
         }
     }
 }
+
+@each $value in $object-fit {
+    .object-#{$value} {
+        object-fit: $value;
+    }
+}
+
+@each $name, $value in $leading {
+    .leading-#{$name} {
+        line-height: $value !important;
+    }
+}

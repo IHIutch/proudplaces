@@ -1,0 +1,81 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="bg-teal text-white font-noto-serif">
+		<div class="row g-0">
+			<div class="col-12">
+				<div class="embed-responsive embed-responsive-21by9">
+					<img class="embed-responsive-item object-cover" src="{{ post.thumbnail.src }}"/>
+				</div>
+			</div>
+		</div>
+		<main class="container">
+			<div class="row">
+				<div class="col-12 offset-md-2 col-md-8">
+					<div class="mb-8">
+						<h1>{{ post.title }}</h1>
+						<div>
+							<span>Written by
+								<a href="{{post.author.link}}">{{post.author.name}}</a>
+							</span>
+							<span class="mx-2">|</span>
+							<span>{{read_time}}</span>
+						</div>
+					</div>
+					<div class="border-bottom">
+						<div class="post text-xl">
+							{{ post.content|raw }}
+						</div>
+					</div>
+					<div class="py-6 border-bottom">
+						<div class="row">
+							<div class="col-3"></div>
+							<div class="col-9">
+								<div>
+									<h4>
+										{{post.author.name}}
+									</h4>
+								</div>
+								<div class="mb-4">
+									{{post.author.description}}
+								</div>
+								<div>
+									<a href="{{post.author.user_url}}">{{post.author.user_url}}</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<div class="container-fluid py-6">
+			<div class="row">
+				<div class="col-6">
+					<div>
+						<div>
+							<a href="{{post.next.link}}">{{post.next}}</a>
+						</div>
+						<div>
+							<p>
+								{{post.next.preview}}
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-6">
+					<div>
+						<div>
+							<a href="{{post.prev.link}}">{{post.prev}}</a>
+						</div>
+						<div>
+							<p>
+								{{post.prev.preview}}
+							</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+{% endblock %}

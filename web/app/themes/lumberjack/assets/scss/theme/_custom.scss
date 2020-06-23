@@ -1,0 +1,21 @@
+.font-noto-serif {
+    font-family: "Noto Serif JP";
+}
+
+.post {
+    img {
+        @extend .w-100;
+    }
+    figcaption {
+        @extend .text-sm;
+    }
+    p {
+        @extend .leading-loose;
+    }
+    p ~ figure {
+        @extend .mb-16;
+    }
+    p ~ p {
+        @extend .mb-16;
+    }
+}
