@@ -97,12 +97,6 @@ module.exports = {
                     },
                 },
             },
-            {
-                test: /\.(css)$/,
-                use: {
-                    loader: "url-loader",
-                },
-            },
         ],
     },
 };
