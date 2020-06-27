@@ -2,19 +2,13 @@
 
 {% block content %}
 <main class="container">
-
     <div class="row">
         {% for contributor in contributors %}
         <div class="col-4">
-            <article>
+            <div>
                 {% if contributor.image %}
                 <div class="mb-2">
-                    <img class="img-thumbnail" src="{{contributor.image}}" />
-                </div>
-                {% endif %}
-                {% if contributor.thumbnail %}
-                <div class="mb-2">
-                    <img class="img-thumbnail" src="{{contributor.thumbnail}}" />
+                    <img class="img-thumbnail" src="{{contributor.image.url}}" />
                 </div>
                 {% endif %}
                 <h3>
@@ -26,7 +20,30 @@
                 <div>
                     {{contributor.description}}
                 </div>
-            </article>
+                <div class="d-flex">
+                    {% set social_media = contributor.meta('social_media') %}
+                    {% if social_media.facebook %}
+                    <div class="mr-2">
+                        <a href="{{social_media.facebook}}">F</a>
+                    </div>
+                    {% endif %}
+                    {% if social_media.twitter %}
+                    <div class="mr-2">
+                        <a href="{{social_media.twitter}}">T</a>
+                    </div>
+                    {% endif %}
+                    {% if social_media.linkedin %}
+                    <div class="mr-2">
+                        <a href="{{social_media.linkedin}}">L</a>
+                    </div>
+                    {% endif %}
+                    {% if social_media.instagram %}
+                    <div class="mr-2">
+                        <a href="{{social_media.instagram}}">I</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
         </div>
         {% endfor %}
     </div>
