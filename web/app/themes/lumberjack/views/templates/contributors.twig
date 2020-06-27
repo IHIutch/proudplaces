@@ -4,17 +4,27 @@
 <main class="container">
 
     <div class="row">
-        {% for author in authors %}
+        {% for contributor in contributors %}
         <div class="col-4">
             <article>
+                {% if contributor.image %}
+                <div class="mb-2">
+                    <img class="img-thumbnail" src="{{contributor.image}}" />
+                </div>
+                {% endif %}
+                {% if contributor.thumbnail %}
+                <div class="mb-2">
+                    <img class="img-thumbnail" src="{{contributor.thumbnail}}" />
+                </div>
+                {% endif %}
                 <h3>
-                    {{author.display_name}}
+                    {{contributor.title}}
                 </h3>
                 <div>
-                    <a href="{{author.user_url}}">{{author.user_url}}</a>
+                    <span class="font-weight-bold small" href="{{contributor.caption}}">{{contributor.caption}}</span>
                 </div>
                 <div>
-                    {{author.description}}
+                    {{contributor.description}}
                 </div>
             </article>
         </div>

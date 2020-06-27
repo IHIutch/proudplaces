@@ -31,12 +31,11 @@ class Contributor extends Post
 
             'labels' => [
                 'name' => __('Contributors'),
-                'singular_name' => __('Contributors'),
+                'singular_name' => __('Contributor'),
                 'add_new_item' => __('Add New Contributor'),
             ],
             'menu_icon' => __('dashicons-admin-users'),
             'public' => true,
-            'has_archive' => 'projects',
             'supports' => ['title', 'thumbnail']
         ];
     }
