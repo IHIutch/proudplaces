@@ -2,6 +2,7 @@
 
 use App\Http\Lumberjack;
 use App\Functions\EnqueueAssets;
+use App\Functions\AddAcfOptionsPage;
 
 // Create the Application Container
 $app = require_once('bootstrap/app.php');
@@ -12,6 +13,7 @@ $lumberjack->bootstrap();
 
 // Custom Functions
 EnqueueAssets::enqueueAssets();
+AddAcfOptionsPage::addAcfOptionsPage();
 
 // Import our routes file
 require_once('routes.php');
