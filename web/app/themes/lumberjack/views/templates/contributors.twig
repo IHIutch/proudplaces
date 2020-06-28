@@ -5,14 +5,22 @@
     <div class="row">
         {% for contributor in contributors %}
         <div class="col-4">
-            <div>
+            <div class="mb-4">
                 {% if contributor.image %}
                 <div class="mb-2">
-                    <img class="img-thumbnail" src="{{contributor.image.url}}" />
+                    <div class="embed-responsive embed-responsive-1by1">
+                        <img class="embed-responsive-item" src="{{contributor.image.url}}" />
+                    </div>
                 </div>
                 {% endif %}
                 <h3>
-                    {{contributor.title}}
+                    <span>{{contributor.title}}</span>
+                    {% if contributor.attribution %}
+                    <span class="mx-1">-</span>
+                    <span>
+                        {{contributor.attribution}}
+                    </span>
+                    {% endif %}
                 </h3>
                 <div>
                     <span class="font-weight-bold small" href="{{contributor.caption}}">{{contributor.caption}}</span>

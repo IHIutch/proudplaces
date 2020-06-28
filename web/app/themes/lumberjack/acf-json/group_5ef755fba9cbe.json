@@ -27,6 +27,25 @@
             "mime_types": ""
         },
         {
+            "key": "field_5ef89f95b2ae1",
+            "label": "Attribution",
+            "name": "attribution",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5ef7561059cd2",
             "label": "Caption",
             "name": "caption",
@@ -163,5 +182,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1593270309
+    "modified": 1593352409
 }

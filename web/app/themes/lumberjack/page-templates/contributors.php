@@ -18,7 +18,7 @@ class ContributorsController extends Controller
     {
 
         $context = Timber::get_context();
-        $contributors = Contributor::builder()->get();
+        $contributors = Contributor::builder()->orderBy('title', 'asc')->limit(-1)->get();
 
         foreach ($contributors as $c) {
             $c->image = get_field('image', $c->id);
