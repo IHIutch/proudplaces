@@ -3,7 +3,7 @@ $rem: 1rem;
 
 // COLORS
 $teal: #235151;
-$theme-colors: (
+$custom-colors: (
     "teal": $teal,
 );
 
@@ -26,6 +26,15 @@ $spacers: (
     32: $rem * 8,
     40: $rem * 10,
     48: $rem * 12,
+    128: $rem * 32,
+);
+
+// Used for widths, heights, max-widths, max-heights, top, right, bottom, left, etc
+$sizes: map-merge(
+    (
+        "auto": auto,
+    ),
+    $spacers
 );
 
 // TYPE

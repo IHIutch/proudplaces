@@ -1,8 +1,70 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    <main>
-        <h1>{{ title }}</h1>
-        <p>{{ content|raw }}</p>
-    </main>
+<main role="main">
+    <div class="container">
+        {% for featured in featured %}
+        <div class="row g-0 h-128 mb-40">
+            <div class="col-4 h-100 bg-light text-center d-flex align-items-center">
+                <div class="px-5">
+                    <div>
+                        <span>{{featured.date | date('M d, Y')}}</span>
+                    </div>
+                    <h1>
+                        <a href="{{featured.link}}">{{ featured.title }}</a>
+                    </h1>
+                    <div>
+                        {{featured.preview.length(20).read_more(false)}}
+                    </div>
+                    <div>
+                        <a href="{{featured.link}}">
+                            <span class="mr-2 text-uppercase">Read this Post</span>
+                            <span>⟶</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8 h-100">
+                <img class="h-100 w-100 object-cover" src="{{featured.thumbnail.src}}" />
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div>
+        <div class="row g-0">
+            <div class="col-4 position-relative">
+                <div class="bg-light p-12 position-sticky top-20">
+                    <div class="mb-4">
+                        <span class="h1">Subscribe to
+                            Our Newsletter</span>
+                    </div>
+                    <div>
+                        <input type="text" class="form-control mb-4">
+                        <button class="btn btn-primary btn-block">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8 px-4">
+                <div class="row">
+                    {% for post in posts %}
+                    <div class="col-6">
+                        <div class="mb-20">
+                            <a href="{{post.link}}">
+                                <div class="embed-responsive embed-responsive-1by1">
+                                    <img class="embed-responsive-item object-cover" src="{{post.thumbnail.src}}" />
+                                </div>
+                            </a>
+                            <div>
+                                {% set tag = post.tags | first %}
+                                <a href="{{tag.link}}"><span class="text-uppercase">{{tag}}</span></a>
+                            </div>
+                            <h3><a href="{{post.link}}">{{post.title}}</a></h3>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 {% endblock %}
